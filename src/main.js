@@ -2,6 +2,9 @@ const express =  require('express');
 const mongoose =  require('mongoose');
 require('dotenv').config();
 const rol_Service = require('./service/rol_service');
+const curso_Service = require('./service/curso_service');
+const programa_Service = require('./service/programa_service');
+const usuario_Service = require('./service/usuario_service');
 
 const app = express();
 const port = 8000;
@@ -9,6 +12,9 @@ const port = 8000;
 //Invocando nuestro servicio de roles
 app.use(express.json());
 app.use('/api',rol_Service);
+app.use('/api',curso_Service);
+app.use('/api',programa_Service);
+app.use('/api',usuario_Service);
 
 //Rutas
 app.get('/',(req, res)=>{
